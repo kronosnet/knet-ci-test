@@ -1,0 +1,54 @@
+###############################################################################
+###############################################################################
+##
+##  Copyright (C) 2023 Red Hat, Inc.  All rights reserved.
+##
+##  This copyrighted material is made available to anyone wishing to use,
+##  modify, copy, or redistribute it subject to the terms and conditions
+##  of the GNU General Public License v.2 or higher
+##
+###############################################################################
+###############################################################################
+
+# keep around ready for later user
+%global alphatag @alphatag@
+%global numcomm @numcomm@
+%global dirty @dirty@
+
+# main (empty) package
+# http://www.rpm.org/max-rpm/s1-rpm-subpack-spec-file-changes.html
+
+Name: knet-ci-test
+Summary: CI test package
+Version: @version@
+Release: 1%{?numcomm:.%{numcomm}}%{?alphatag:.%{alphatag}}%{?dirty:.%{dirty}}%{?dist}
+License: GPLv2+
+URL: https://github.com/kronosnet/knet-ci-test
+Source0: %{name}-%{version}%{?numcomm:.%{numcomm}}%{?alphatag:-%{alphatag}}%{?dirty:-%{dirty}}.tar.gz
+
+# Build dependencies
+BuildRequires: gcc libknet1-devel make
+
+%prep
+%setup -q -n %{name}-%{version}%{?numcomm:.%{numcomm}}%{?alphatag:-%{alphatag}}%{?dirty:-%{dirty}}
+
+%build
+%{configure}
+make %{_smp_mflags}
+
+%install
+rm -rf %{buildroot}
+make install DESTDIR=%{buildroot}
+# remove docs
+rm -rf %{buildroot}/usr/share/doc/%{name}
+
+%description
+ knet CI test package
+
+%files
+%license LICENSE
+%{_sbindir}/helloworld
+
+%changelog
+* @date@ Autotools generated version <nobody@nowhere.org> - @version@-1-@numcomm@.@alphatag@.@dirty@
+- These aren't the droids you're looking for.
