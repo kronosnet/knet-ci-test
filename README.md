@@ -5,3 +5,4 @@ TEST EDIT
 test message 1 from cmdlib
 an accumulation
 MORE?!
+Yes, more
