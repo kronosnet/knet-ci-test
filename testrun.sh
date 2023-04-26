@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "Test message from cmdlib"
+echo "Test message 1 from cmdlib"
 exit 0
