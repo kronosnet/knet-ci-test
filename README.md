@@ -1,3 +1,3 @@
 # knet-ci-test
 Project to test ci.kronosnet.org pipelines development
-testing pulls still
+testing pulls still, again
