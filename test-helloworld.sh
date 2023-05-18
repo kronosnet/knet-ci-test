@@ -9,5 +9,5 @@ if [ "$FAILTESTS" = "yes" ]; then
 	exit 1
 fi
 
-echo "running $build/helloworld ONE"
+echo "running $build/helloworld TWO"
 $build/helloworld
