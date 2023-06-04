@@ -11,7 +11,7 @@ int main(void)
 	logfds[0] = 0;
 	logfds[1] = 0;
 
-	knet_h = knet_handle_new(1, logfds[1], KNET_LOG_ERR, 0);
+	knet_h = knet_handle_new(1, logfds[1], KNET_LOG_ERR);
 
 	if (knet_h) {
 		printf("Hello World!\n");
