@@ -14,7 +14,7 @@ int main(void)
 	knet_h = knet_handle_new(1, logfds[1], KNET_LOG_ERR);
 
 	if (knet_h) {
-		printf("Hello World etc!\n");
+		printf("Hello World!\n");
 		knet_handle_free(knet_h);
 		ret = 0;
 	} else {
