@@ -86,9 +86,6 @@ cc_supports_flag() {
 	return $RC
 }
 
-PKG_CHECK_MODULES([knet], [libknet])
-
-AC_MSG_NOTICE([knet found $knet_CFLAGS / $knet_LIBS])
 
 OPT_CFLAGS="-O2"
 
