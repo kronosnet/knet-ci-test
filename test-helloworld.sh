@@ -8,6 +8,5 @@ build="$2"
 if [ "$FAILTESTS" = "yes" ]; then
 	exit 1
 fi
-
 echo "running $build/helloworld"
 $build/helloworld
