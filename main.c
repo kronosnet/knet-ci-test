@@ -5,7 +5,7 @@ int main(void)
 {
 	int ret = 0;
 
-	printf("Hello World!\n");
+	printf("Hello World without knet!\n");
 
 	return ret;
 }
