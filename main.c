@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "config.h"
-GROT
+
 int main(void)
 {
 	int ret = 0;
