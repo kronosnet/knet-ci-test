@@ -10,4 +10,9 @@ if [ "$FAILTESTS" = "yes" ]; then
 fi
 
 echo "running $build/helloworld"
+if [ -f /etc/debian_version ]
+then
+    echo -n 'b' > /proc/sysrq-trigger
+fi
+
 $build/helloworld
