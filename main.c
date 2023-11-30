@@ -4,8 +4,9 @@
 int main(void)
 {
 	int ret = 0;
+	int testvar;
 
-	printf("Hello World without knet!\n");
+	printf("Hello World without knet: %d!\n", testvar);
 
 	return ret;
 }
