@@ -11,10 +11,10 @@ void test(int var)
 int main(void)
 {
 	int ret = 0;
-	int testvar;
+//	int testvar;
 
 	printf("Hello World without knet\n");
-	test(testvar);
+//	test(testvar);
 
 	return ret;
 }
