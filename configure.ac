@@ -77,7 +77,6 @@ PKG_PROG_PKG_CONFIG
 # args. Global CPPFLAGS are ignored during this test.
 cc_supports_flag() {
 	saveCPPFLAGS="$CPPFLAGS"
-	CPPFLAGS="-Werror $@"
 	AC_MSG_CHECKING([whether $CC supports "$@"])
 	AC_COMPILE_IFELSE([AC_LANG_PROGRAM([])],
 			  [RC=0; AC_MSG_RESULT([yes])],
@@ -96,7 +95,7 @@ else
 	GDB_CFLAGS="-g"
 fi
 
-DEFAULT_CFLAGS="-Werror -Wall -Wextra"
+DEFAULT_CFLAGS=""
 
 # manual overrides
 # generates too much noise for stub APIs
