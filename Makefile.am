@@ -18,6 +18,8 @@ AUTOMAKE_OPTIONS	= foreign
 
 ACLOCAL_AMFLAGS		= -I m4
 
+WITH			?= --no-opts
+
 SPEC			= $(PACKAGE_NAME).spec
 
 TARGZFILE		= $(PACKAGE_NAME)-$(VERSION).tar.gz
@@ -110,6 +112,7 @@ srpm: clean
 	rpmbuild $(RPMBUILDOPTS) --nodeps -bs $(SPEC)
 
 rpm: clean
+	echo "LOOK AT ME!!!! I AM HERE $(WITH)"
 	$(MAKE) $(SPEC) $(TARGZFILE)
 	rpmbuild $(RPMBUILDOPTS) -ba $(SPEC)
 
