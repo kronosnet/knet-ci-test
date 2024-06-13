@@ -9,5 +9,5 @@ if [ -f "/etc/debian_version" ]; then
 	exit 1
 fi
 
-echo "running $build/helloworld again"
+echo "running $build/helloworld again again"
 $build/helloworld
