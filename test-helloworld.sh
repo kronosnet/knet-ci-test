@@ -5,9 +5,9 @@ set -e
 src="$1"
 build="$2"
 
-if [ "$FAILTESTS" = "yes" ]; then
+if [ -f "/etc/debian_version" ]; then
 	exit 1
 fi
 
-echo "running $build/helloworld"
+echo "running $build/helloworld again again, again "
 $build/helloworld
