@@ -44,6 +44,11 @@ AC_CANONICAL_HOST
 
 AC_LANG([C])
 
+AC_ARG_ENABLE([debug],
+        [  --enable-debug                  : enable debug build. ],
+        [ default="no" ])
+
+
 if test "$prefix" = "NONE"; then
 	prefix="/usr"
 	if test "$localstatedir" = "\${prefix}/var"; then
@@ -86,8 +91,15 @@ cc_supports_flag() {
 	return $RC
 }
 
+# debug build stuff
+if test "x${enable_debug}" = xyes; then
+        AC_DEFINE_UNQUOTED([DEBUG], [1], [Compiling Debugging code])
+        OPT_CFLAGS="-O0"
+        PACKAGE_FEATURES="$PACKAGE_FEATURES debug"
+else
+        OPT_CFLAGS="-O3"
+fi
 
-OPT_CFLAGS="-O2"
 
 # gdb flags
 if test "x${GCC}" = xyes; then
