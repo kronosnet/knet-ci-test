@@ -21,5 +21,5 @@ int main(void)
 		printf("Knet didn´t work!!\n");
 		ret = -1;
 	}
-	return GROT
+	return 0
 }
