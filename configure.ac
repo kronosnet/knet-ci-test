@@ -21,14 +21,6 @@ AC_USE_SYSTEM_EXTENSIONS
 AM_INIT_AUTOMAKE([1.13 dist-bzip2 dist-xz color-tests -Wno-portability subdir-objects])
 
 LT_PREREQ([2.2.6])
-# --enable-new-dtags: Use RUNPATH instead of RPATH.
-# It is necessary to have this done before libtool does linker detection.
-# See also: https://github.com/kronosnet/kronosnet/issues/107
-# --as-needed: Modern systems have builtin ceil() making -lm superfluous but
-# AC_SEARCH_LIBS can't detect this because it tests with a false prototype
-AX_CHECK_LINK_FLAG([-Wl,--enable-new-dtags],
-		   [AM_LDFLAGS=-Wl,--enable-new-dtags],
-		   [AC_MSG_ERROR(["Linker support for --enable-new-dtags is required"])])
 AX_CHECK_LINK_FLAG([-Wl,--as-needed], [AM_LDFLAGS="$AM_LDFLAGS -Wl,--as-needed"])
 
 saved_LDFLAGS="$LDFLAGS"
