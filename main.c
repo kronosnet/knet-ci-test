@@ -5,7 +5,7 @@ int main(void)
 {
 	int ret = 0;
 
-	printf("Hello World without authorisation(wot)!\n");
+	printf("Hello World without authorisation!\n");
 
 	return ret;
 }
