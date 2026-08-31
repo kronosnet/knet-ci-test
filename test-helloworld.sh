@@ -9,5 +9,5 @@ if [ "$FAILTESTS" = "yes" ]; then
 	exit 1
 fi
 
-echo "running $build/helloworld ci_skipper #2"
+echo "running $build/helloworld ci_skipper #3"
 $build/helloworld
